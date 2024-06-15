@@ -8,14 +8,45 @@
   <body>
     <div class="bg-slate-700 min-h-screen w-full">
       <div class="flex flex-col p-8 gap-12">
-        <div class="form">
-          <form>
-            <input placeholder="Enter Task" class="bg-slate-200" /><input
-              placeholder="Enter description of your task"
+        <div class="form mt-12">
+          <form class="flex flex-col gap-8 w-[50%] mx-auto">
+            <input
+              placeholder="Enter Task Title"
+              class="bg-slate-200 rounded-md py-2 px-4 placeholder:text-slate-500"
             />
+            <textarea
+              placeholder="Enter description of your task"
+              class="bg-slate-300 py-8 px-4 rounded-md placeholder:text-slate-500"
+            ></textarea>
+            <button
+              type="submit"
+              class="bg-blue-500 rounded-lg w-fit py-2 px-4 mx-auto text-white font-sm font-semibold"
+              value="create task"
+            >
+              Submit
+            </button>
           </form>
         </div>
-        <div class="tasks"></div>
+        <div class="tasks w-[50%] mx-auto flex gap-12">
+          <div class="task bg-slate-400 p-4 rounded-lg w-[27%]">
+            <h1 class="text-lg font-semibold text-wrap truncate">
+              Heading of the task
+            </h1>
+            <a class="text-sm">Read More.</a>
+          </div>
+          <div class="task bg-slate-400 p-4 rounded-lg w-[27%]">
+            <h1 class="text-lg font-semibold text-wrap truncate">
+              Heading of the task
+            </h1>
+            <a class="text-sm">Read More.</a>
+          </div>
+          <div class="task bg-slate-400 p-4 rounded-lg w-[27%]">
+            <h1 class="text-lg font-semibold text-wrap truncate">
+              Heading of the task
+            </h1>
+            <a class="text-sm">Read More.</a>
+          </div>
+        </div>
       </div>
     </div>
   </body>
