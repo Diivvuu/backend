@@ -9,14 +9,20 @@
     <div class="bg-slate-700 min-h-screen w-full">
       <div class="flex flex-col p-8 gap-12">
         <div class="form mt-12">
-          <form class="flex flex-col gap-8 w-[50%] mx-auto">
+          <form
+            class="flex flex-col gap-8 w-[50%] mx-auto"
+            action="/create"
+            method="post"
+          >
             <input
               placeholder="Enter Task Title"
               class="bg-slate-200 rounded-md py-2 px-4 placeholder:text-slate-500"
+              name="task-title"
             />
             <textarea
               placeholder="Enter description of your task"
               class="bg-slate-300 py-8 px-4 rounded-md placeholder:text-slate-500"
+              name="task-text"
             ></textarea>
             <button
               type="submit"
@@ -28,24 +34,14 @@
           </form>
         </div>
         <div class="tasks w-[50%] mx-auto flex gap-12">
+          <% if(files.length > 0) { files.forEach(function(val) { %>
           <div class="task bg-slate-400 p-4 rounded-lg w-[27%]">
-            <h1 class="text-lg font-semibold text-wrap truncate">
-              Heading of the task
-            </h1>
-            <a class="text-sm">Read More.</a>
+            <h1 class="text-lg font-semibold text-wrap truncate"><%= val %></h1>
+            <a class="text-sm" href="/file/<%=val%>">Read More.</a>
           </div>
-          <div class="task bg-slate-400 p-4 rounded-lg w-[27%]">
-            <h1 class="text-lg font-semibold text-wrap truncate">
-              Heading of the task
-            </h1>
-            <a class="text-sm">Read More.</a>
-          </div>
-          <div class="task bg-slate-400 p-4 rounded-lg w-[27%]">
-            <h1 class="text-lg font-semibold text-wrap truncate">
-              Heading of the task
-            </h1>
-            <a class="text-sm">Read More.</a>
-          </div>
+          <% })} else { %>
+          <h3>No tasks added yet.</h3>
+          <%} %>
         </div>
       </div>
     </div>

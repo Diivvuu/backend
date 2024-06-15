@@ -10,7 +10,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", function (req, res) {
   fs.readdir(`./files`, function (err, files) {
-    res.render("index", { files: files });
+    res.render("index",
+      { files: files });
   });
 });
 app.get("/file/:filename", function (req, res) {
