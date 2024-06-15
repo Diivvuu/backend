@@ -33,13 +33,20 @@
             </button>
           </form>
         </div>
-        <div class="tasks w-[50%] mx-auto flex gap-12">
+        <div class="tasks w-[80%] mx-auto flex gap-12">
           <% if(files.length > 0) { files.forEach(function(val) { %>
-          <div class="task bg-slate-400 p-4 rounded-lg w-[27%]">
+          <div class="task bg-slate-400 p-4 rounded-lg w-[50%]">
             <h1 class="text-lg font-semibold text-wrap truncate"><%= val %></h1>
-            <a class="text-sm text-blue-700" href="/file/<%=val%>"
-              >Read More...</a
-            >
+            <div class="flex justify-between">
+              <a class="text-sm text-blue-700 text-nowrap" href="/file/<%=val%>"
+                >Read More...</a
+              >
+              <a
+                class="text-sm text-slate-800 text-nowrap"
+                href="/edit/<%=val%>"
+                >Edit Task</a
+              >
+            </div>
           </div>
           <% })} else { %>
           <h3>No tasks added yet.</h3>

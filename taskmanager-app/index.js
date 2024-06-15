@@ -29,6 +29,9 @@ app.get("/file/:filename", function (req, res) {
   });
   // console.log(req.params.filename);
 });
+app.get("./edit/:filename", function (req, res) {
+  res.render("edit");
+});
 app.listen(3000, function () {
   console.log("its working");
 });
